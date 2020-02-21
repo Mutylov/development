@@ -82,18 +82,34 @@ body {
     .header .header__inner .header__logo {
       font-size: 25px;
       font-weight: 700; }
-    .header .header__inner .header__nav .nav__item {
-      font-size: 20px;
-      font-weight: 600;
-      margin: 0 20px;
-      color: inherit;
-      text-decoration: none;
-      display: inline-block; }
-      .header .header__inner .header__nav .nav__item:last-child {
-        margin-right: 0; }
-    @media (max-width: 991px) {
-      .header .header__inner .header__nav {
-        display: none; } }
+    .header .header__inner .header__nav {
+      -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
+      -o-transition: opacity 0.2s linear, visibility 0.2s linear;
+      transition: opacity 0.2s linear, visibility 0.2s linear; }
+      .header .header__inner .header__nav .nav__item {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 20px;
+        color: inherit;
+        text-decoration: none;
+        display: inline-block; }
+        .header .header__inner .header__nav .nav__item:last-child {
+          margin-right: 0; }
+        @media (max-width: 991px) {
+          .header .header__inner .header__nav .nav__item {
+            display: block; } }
+      @media (max-width: 991px) {
+        .header .header__inner .header__nav {
+          padding-bottom: 30px;
+          -webkit-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+                  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: #fff;
+          visibility: hidden;
+          opacity: 0; } }
     .header .header__inner .header__toggle {
       position: absolute;
       right: 15px;
@@ -160,17 +176,8 @@ body {
     -webkit-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
             box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2); }
   .header--active .header__inner .header__nav {
-    display: block;
-    padding-bottom: 30px;
-    -webkit-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #fff; }
-    .header--active .header__inner .header__nav .nav__item {
-      display: block; }
+    visibility: visible;
+    opacity: 1; }
   .header--active .header__inner .header__toggle .toggle__item {
     height: 0; }
     .header--active .header__inner .header__toggle .toggle__item:before {

@@ -109,6 +109,8 @@ body {
         }
 
         .header__nav {
+            transition: opacity 0.2s linear, visibility 0.2s linear;
+
             .nav__item {
                 font-size: 20px;
                 font-weight: 600;
@@ -120,10 +122,22 @@ body {
                 &:last-child {
                     margin-right: 0;
                 }
+
+                @include breakpoint-max(lg) {
+                    display: block;
+                }
             }
 
             @include breakpoint-max(lg) {
-                display: none;
+                padding-bottom: 30px;
+                box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                visibility: hidden;
+                opacity: 0;
             }
         }
 
@@ -199,18 +213,8 @@ body {
     &--active {
         .header__inner {
             .header__nav {
-                display: block;
-                padding-bottom: 30px;
-                box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #fff;
-
-                .nav__item {
-                    display: block;
-                }
+                visibility: visible;
+                opacity: 1;
             }
 
             .header__toggle {
